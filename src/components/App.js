@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LocationList from './LocationList'
+import { Colors } from './util/Colors'
 import NavBar from './NavBar'
 import styled from 'styled-components'
 
@@ -43,6 +44,7 @@ const AppContainer = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
+background-color: ${Colors.darkGrey}
 `
 
 const FormContainer = styled.div`

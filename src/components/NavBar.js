@@ -1,11 +1,25 @@
 import React from 'react'
+import styled from 'styled-components'
+
+import { Colors } from './util/Colors'
 
 const NavBar = () =>  {
         return (
-            <div>
-                Meet In Middle App
-            </div>
+            <NavContainer>
+                <HeaderText>
+                    <span>Let's</span> Meet In The Middle
+                </HeaderText>
+            </NavContainer>
         )
 }
 
 export default NavBar
+
+const NavContainer = styled.div`
+    color: ${Colors.offWhite};
+    height: 50px
+`
+
+const HeaderText = styled.div`
+    font-weight: bold;
+`
