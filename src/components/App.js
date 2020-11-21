@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LocationList from './LocationList'
+import NavBar from './NavBar'
 import styled from 'styled-components'
 
 const App = () => {
@@ -7,7 +8,7 @@ const App = () => {
 
   return (
     <AppContainer>
-
+      <NavBar />
       <FormContainer>
         <label>
           First Address/City:
@@ -40,6 +41,7 @@ export default App;
 
 const AppContainer = styled.div`
 display: flex;
+flex-direction: column;
 width: 100%;
 `
 
