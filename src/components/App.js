@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LocationList from './LocationList'
 import styled from 'styled-components'
 
 const App = () => {
@@ -25,13 +26,12 @@ const App = () => {
             <option value="shopping">Shopping</option>
           </select>
         </label>
-        
-        Any
-        Restaurant
+
         <SubmitButton type="submit" value="Submit" />
 
 
       </FormContainer>
+      <LocationList />
     </AppContainer>
   );
 }
