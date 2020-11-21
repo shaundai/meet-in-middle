@@ -17,7 +17,9 @@ export default NavBar
 
 const NavContainer = styled.div`
     color: ${Colors.offWhite};
-    height: 50px
+    display: flex;
+    justify-content: center;
+    height: 50px;
 `
 
 const HeaderText = styled.div`
