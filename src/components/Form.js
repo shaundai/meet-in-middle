@@ -10,16 +10,19 @@ const Form = () => {
         return (
             <FormContainer>
             <AddressesContainer>
-            <label>
-              First Address/City:
-            <InputBox type="text" value={startAndEnd.start} onChange={e => {setStartAndEnd({...startAndEnd, start: e.target.value})}}></InputBox>
-            </label>
-            <label>
-              Second Address/City:
-            <InputBox type="text" value={startAndEnd.end} onChange={e => {setStartAndEnd({...startAndEnd, end: e.target.value})}}></InputBox>
-            </label>
+
+                <Label>
+                First Address/City:
+                <InputBox type="text" value={startAndEnd.start} onChange={e => {setStartAndEnd({...startAndEnd, start: e.target.value})}}></InputBox>
+                </Label>
+
+                <Label>
+                Second Address/City:
+                <InputBox type="text" value={startAndEnd.end} onChange={e => {setStartAndEnd({...startAndEnd, end: e.target.value})}}></InputBox>
+                </Label>
             </AddressesContainer>
-            <label>
+
+            <Label>
               Meeting Location Type:
               <select value={startAndEnd.locationType} onChange={e => {setStartAndEnd({...startAndEnd, locationType: e.target.value})}}>
                 <option value="All">Any</option>
@@ -27,7 +30,7 @@ const Form = () => {
                 <option value="active">Things to Do</option>
                 <option value="shopping">Shopping</option>
               </select>
-            </label>
+            </Label>
     
             <SubmitButton type="submit" value="Submit" />
     
@@ -41,7 +44,6 @@ export default Form;
 
 
 const FormContainer = styled.div`
-height: 130px;
 width: 75%;
 padding: 15px 0;
 display: flex;
@@ -52,16 +54,26 @@ font-family: Montserrat;
 border: 1px solid black;
 `
 
+const Label = styled.label`
+color: ${Colors.lightGrey}
+`
+
 const AddressesContainer = styled.div`
 display: flex;
 justify-content: space-evenly;
 width: 100%;
 margin: 0 auto;
+padding: 40px 0;
 font-family: Montserrat;
 `
 
 const InputBox = styled.input`
 display: flex;
+background-color: ${Colors.offWhite};
+border-radius: 8px;
+height: 30px;
+width: 280px;
+margin-top: 10px;
 `
 const SubmitButton = styled.input`
 padding: 5px;
