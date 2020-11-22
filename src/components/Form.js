@@ -82,7 +82,7 @@ border-radius: 8px;
 height: 30px;
 width: 320px;
 margin-top: 10px;
-padding: 0 8px;
+padding: 0 10px;
 font-family: Montserrat;
 font-size: .9em;
 `
@@ -97,7 +97,7 @@ margin-top: 5px;
 const SelectBox = styled.select`
 margin-top: 10px;
 background-color: ${Colors.offWhite};
-padding: 0 8px;
+padding: 0 9px;
 border-radius: 8px;
 font-family: Montserrat;
 font-size: .9em;
@@ -115,12 +115,12 @@ display: flex;
 
 const SubmitButton = styled.input`
 margin: 30px 0 20px;
-padding: 5px 7px;
-width: 120px;
+padding: 5.5px 9px;
+width: 140px;
 border-width: 1px;
 border-radius: 20px;
 font-weight: bold;
-font-size: .9em;
+font-size: 1em;
 font-family: Montserrat;
 background-color: ${Colors.mainPurple};
 color: ${Colors.offWhite};
