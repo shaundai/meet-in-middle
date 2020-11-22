@@ -12,29 +12,29 @@ const AddressForm = () => {
             <FormContainer>
             <AddressesContainer>
 
-                <SingleAddressContainer>
-                <Label>First Location:</Label>
-                <InputBox type="text" placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.start} onChange={e => {setStartAndEnd({...startAndEnd, start: e.target.value})}}></InputBox>
-                </SingleAddressContainer>
+                <SingleInputContainer>
+                    <Label>First Location:</Label>
+                    <InputBox type="text" placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.start} onChange={e => {setStartAndEnd({...startAndEnd, start: e.target.value})}}></InputBox>
+                </SingleInputContainer>
 
-                <Label>
-                Second Location:
-                <InputBox type="text" placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.end} onChange={e => {setStartAndEnd({...startAndEnd, end: e.target.value})}}></InputBox>
-                </Label>
+                <SingleInputContainer>
+                    <Label>Second Location: </Label>
+                    <InputBox type="text" placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.end} onChange={e => {setStartAndEnd({...startAndEnd, end: e.target.value})}}></InputBox>
+                </SingleInputContainer>
 
             </AddressesContainer>
 
             <LocationTypeContainer>
 
-                <SingleAddressContainer>
-                <Label>Location Type (optional):</Label>
-                <SelectBox value={startAndEnd.locationType} onChange={e => {setStartAndEnd({...startAndEnd, locationType: e.target.value})}}>
-                    <option value="All">Any</option>
-                    <option value="food">Restaurant/Bar</option>
-                    <option value="active">Things to Do</option>
-                    <option value="shopping">Shopping</option>
-                </SelectBox>
-                </SingleAddressContainer>
+                <SingleInputContainer>
+                    <Label>Location Type (optional):</Label>
+                    <SelectBox value={startAndEnd.locationType} onChange={e => {setStartAndEnd({...startAndEnd, locationType: e.target.value})}}>
+                        <option value="All">Any</option>
+                        <option value="food">Restaurant/Bar</option>
+                        <option value="active">Things to Do</option>
+                        <option value="shopping">Shopping</option>
+                    </SelectBox>
+                </SingleInputContainer>
 
             </LocationTypeContainer>
 
@@ -51,7 +51,7 @@ const AddressForm = () => {
 export default AddressForm;
 
 
-const FormContainer = styled.div`
+const FormContainer = styled.form`
 width: 75%;
 padding: 15px 0;
 display: flex;
@@ -65,7 +65,7 @@ const Label = styled.label`
 color: ${Colors.lightGrey};
 `
 
-const SingleAddressContainer = styled.div`
+const SingleInputContainer = styled.div`
     display: flex;
     flex-direction: column;
 `
