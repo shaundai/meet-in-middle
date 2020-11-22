@@ -24,12 +24,12 @@ const Form = () => {
 
             <Label>
               Meeting Location Type:
-              <select value={startAndEnd.locationType} onChange={e => {setStartAndEnd({...startAndEnd, locationType: e.target.value})}}>
+              <SelectBox value={startAndEnd.locationType} onChange={e => {setStartAndEnd({...startAndEnd, locationType: e.target.value})}}>
                 <option value="All">Any</option>
                 <option value="food">Restaurant/Bar</option>
                 <option value="active">Things to Do</option>
                 <option value="shopping">Shopping</option>
-              </select>
+              </SelectBox>
             </Label>
     
             <SubmitButton type="submit" value="Submit" />
@@ -55,7 +55,9 @@ border: 1px solid black;
 `
 
 const Label = styled.label`
-color: ${Colors.lightGrey}
+color: ${Colors.lightGrey};
+display: flex;
+flex-direction: column;
 `
 
 const AddressesContainer = styled.div`
@@ -75,6 +77,21 @@ height: 30px;
 width: 280px;
 margin-top: 10px;
 `
+
+const SelectBox = styled.select`
+background-color: ${Colors.offWhite};
+padding: 0 8px;
+border-radius: 8px;
+font-family: Montserrat;
+color: ${Colors.mainBlack};
+height: 30px;
+width: 280px;
+margin-top: 10px;
+border-width: 2px;
+border-style: inset;
+border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+`
+
 const SubmitButton = styled.input`
 padding: 5px;
 width: 120px;
