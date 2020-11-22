@@ -7,7 +7,7 @@ const NavBar = () =>  {
         return (
             <NavContainer>
                 <HeaderText>
-                    <span>Let's</span> Meet In The Middle
+                    <div>Let's</div><div> Meet In The Middle</div>
                 </HeaderText>
             </NavContainer>
         )
@@ -20,8 +20,11 @@ const NavContainer = styled.div`
     display: flex;
     justify-content: center;
     height: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
 
 const HeaderText = styled.div`
     font-weight: bold;
+    display: flex;
+    align-items: center;
 `
