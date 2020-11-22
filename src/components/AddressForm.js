@@ -5,17 +5,17 @@ import styled from 'styled-components'
 import { Colors } from './util/Colors'
 
 
-const Form = () => {
+const AddressForm = () => {
     const [startAndEnd, setStartAndEnd] = useState({start: '', end: '', locationType: 'All'})
 
         return (
             <FormContainer>
             <AddressesContainer>
 
-                <Label>
-                First Location:
+                <SingleAddressContainer>
+                <Label>First Location:</Label>
                 <InputBox type="text" placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.start} onChange={e => {setStartAndEnd({...startAndEnd, start: e.target.value})}}></InputBox>
-                </Label>
+                </SingleAddressContainer>
 
                 <Label>
                 Second Location:
@@ -26,15 +26,15 @@ const Form = () => {
 
             <LocationTypeContainer>
 
-                <Label>
-                Location Type (optional):
+                <SingleAddressContainer>
+                <Label>Location Type (optional):</Label>
                 <SelectBox value={startAndEnd.locationType} onChange={e => {setStartAndEnd({...startAndEnd, locationType: e.target.value})}}>
                     <option value="All">Any</option>
                     <option value="food">Restaurant/Bar</option>
                     <option value="active">Things to Do</option>
                     <option value="shopping">Shopping</option>
                 </SelectBox>
-                </Label>
+                </SingleAddressContainer>
 
             </LocationTypeContainer>
 
@@ -48,7 +48,7 @@ const Form = () => {
 }
 
 
-export default Form;
+export default AddressForm;
 
 
 const FormContainer = styled.div`
@@ -63,8 +63,11 @@ font-family: Montserrat;
 
 const Label = styled.label`
 color: ${Colors.lightGrey};
-display: flex;
-flex-direction: column;
+`
+
+const SingleAddressContainer = styled.div`
+    display: flex;
+    flex-direction: column;
 `
 
 const AddressesContainer = styled.div`
