@@ -28,15 +28,17 @@ const HeaderText = styled.div`
     font-weight: bold;
     display: flex;
     align-items: center;
-    font-size: 2.5em;
 `
 
 const Lets = styled.div`
     font-style: italic;
-    font-family: Montserrat;
-    padding-right: .4em;
+    font-family: Yellowtail;
+    font-size: 2.6em;
+    padding-bottom: .2em;
+    padding-right: .3em;
     color: #C0C0F2;
 `
 const MeetInMiddle = styled.div`
     font-family: Barlow;
+    font-size: 2.5em;
 `
