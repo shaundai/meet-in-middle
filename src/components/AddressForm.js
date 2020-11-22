@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Form, Field } from 'react-final-form'
 import styled from 'styled-components'
 
 import { Colors } from './util/Colors'
@@ -35,7 +34,6 @@ const AddressForm = () => {
                         <option value="shopping">Shopping</option>
                     </SelectBox>
                 </SingleInputContainer>
-
             </LocationTypeContainer>
 
             <SubmitContainer>
