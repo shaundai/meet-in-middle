@@ -7,7 +7,7 @@ const NavBar = () =>  {
         return (
             <NavContainer>
                 <HeaderText>
-                    <Lets>Let's</Lets><MeetInMiddle> Meet In The Middle</MeetInMiddle>
+                    <Lets>Let's</Lets><MeetInMiddle> Meet in the Middle</MeetInMiddle>
                 </HeaderText>
             </NavContainer>
         )
@@ -36,7 +36,7 @@ const Lets = styled.div`
     font-size: 2.6em;
     padding-bottom: .2em;
     padding-right: .3em;
-    color: #C0C0F2;
+    color: ${Colors.mainLavender};
 `
 const MeetInMiddle = styled.div`
     font-family: Barlow;
