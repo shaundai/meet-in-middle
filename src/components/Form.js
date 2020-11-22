@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+import { Colors } from './util/Colors'
+
+
 const Form = () => {
     const [startAndEnd, setStartAndEnd] = useState({start: '', end: '', locationType: 'All'})
 
@@ -36,14 +39,25 @@ export default Form;
 
 
 const FormContainer = styled.div`
+height: 130px;
+padding: 15px 0;
 display: flex;
 flex-direction: column;
 margin: 0 auto;
+font-family: Montserrat;
 `
 
 const InputBox = styled.input`
 display: flex;
 `
 const SubmitButton = styled.input`
-display: flex;
+padding: 5px;
+width: 120px;
+border-width: 1px;
+border-radius: 20px;
+font-weight: bold;
+font-size: 1em;
+font-family: Montserrat;
+background-color: ${Colors.mainPurple};
+color: ${Colors.offWhite};
 `
