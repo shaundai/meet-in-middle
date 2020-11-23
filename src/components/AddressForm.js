@@ -12,10 +12,15 @@ const AddressForm = ({handleSubmit}) => {
             <FormContainer onSubmit={handleSubmit}>
             <AddressesContainer>
 
-                <SingleInputContainer>
-                    <Label>First Location:</Label>
-                    <InputBox type="text" placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.start} onChange={e => {setStartAndEnd({...startAndEnd, start: e.target.value})}}></InputBox>
-                </SingleInputContainer>
+                <Field
+                    name="firstLocation"
+                    render={({ input }) => (
+                    <SingleInputContainer>
+                        <Label>First Location:</Label>
+                        <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.start} onChange={e => {setStartAndEnd({...startAndEnd, start: e.target.value})}}></InputBox>
+                    </SingleInputContainer>
+                    )}
+                />
 
                 <Field
                 name="secondLocation"
