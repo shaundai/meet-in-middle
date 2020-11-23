@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components'
 
 import { Colors } from './util/Colors'
-import AddressForm from './AddressForm'
 import AddressFormContainer from './AddressFormContainer'
 import LocationList from './LocationList'
 import NavBar from './NavBar'

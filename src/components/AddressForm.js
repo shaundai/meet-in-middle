@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Field } from 'react-final-form'
 
 import { Colors } from './util/Colors'
 
 
-const AddressForm = () => {
+const AddressForm = ({handleSubmit}) => {
     const [startAndEnd, setStartAndEnd] = useState({start: '', end: '', locationType: 'All'})
 
         return (
-            <FormContainer>
+            <FormContainer onSubmit={handleSubmit}>
             <AddressesContainer>
 
                 <SingleInputContainer>
@@ -16,10 +17,15 @@ const AddressForm = () => {
                     <InputBox type="text" placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.start} onChange={e => {setStartAndEnd({...startAndEnd, start: e.target.value})}}></InputBox>
                 </SingleInputContainer>
 
-                <SingleInputContainer>
-                    <Label>Second Location: </Label>
-                    <InputBox type="text" placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.end} onChange={e => {setStartAndEnd({...startAndEnd, end: e.target.value})}}></InputBox>
-                </SingleInputContainer>
+                <Field
+                name="secondLocation"
+                    render={({ input }) => (
+                        <SingleInputContainer>
+                            <Label>Second Location: </Label>
+                            <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.end} onChange={e => {setStartAndEnd({...startAndEnd, end: e.target.value})}}></InputBox>
+                        </SingleInputContainer>
+                    )}
+                />
 
             </AddressesContainer>
 
