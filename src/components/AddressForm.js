@@ -20,7 +20,7 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
                     <SingleInputContainer>
                         <Label>First Location:</Label>
                         <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
-                        {meta.error && meta.touched && <span>{meta.error}</span>}
+                        {meta.error && meta.touched && <FieldError>{meta.error}</FieldError>}
                     </SingleInputContainer>
                     )}
                 />
@@ -32,7 +32,7 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
                         <SingleInputContainer>
                             <Label>Second Location: </Label>
                             <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
-                            {meta.error && meta.touched && <span>{meta.error}</span>}
+                            {meta.error && meta.touched && <FieldError>{meta.error}</FieldError>}
                         </SingleInputContainer>
                     )}
                 />
@@ -111,6 +111,13 @@ margin-top: 10px;
 padding: 0 10px;
 font-family: Montserrat;
 font-size: .9em;
+`
+
+const FieldError = styled.span`
+color: red;
+font-weight: bold;
+padding-left: 10px;
+margin-top: 10px;
 `
 
 const LocationTypeContainer = styled.div`
