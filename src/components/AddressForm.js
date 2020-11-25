@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Field } from 'react-final-form'
 
@@ -6,8 +6,6 @@ import { Colors } from './util/Colors'
 
 
 const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
-    const [startAndEnd, setStartAndEnd] = useState({start: '', end: '', locationType: 'All'})
-
         return (
             <FormContainer onSubmit={handleSubmit}>
             <AddressesContainer>
