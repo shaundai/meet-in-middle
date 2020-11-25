@@ -18,7 +18,6 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
                     <SingleInputContainer>
                         <Label>First Location:</Label>
                         <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
-                        <Label>{input.value}</Label>
                     </SingleInputContainer>
                     )}
                 />
