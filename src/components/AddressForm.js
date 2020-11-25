@@ -20,9 +20,8 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
                     <SingleInputContainer>
                         <LabelContainer>
                             <Label>First Location:</Label>
-                            <FieldError>{meta.error && meta.touched && <span>{meta.error}</span>}</FieldError>
+                            {meta.error && meta.touched && <FieldError>{meta.error}</FieldError>}
                         </LabelContainer>
-                        
                         <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
                     </SingleInputContainer>
                     )}
@@ -34,7 +33,7 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
                     render={({ input, meta }) => (
                         <SingleInputContainer>
                             <LabelContainer>
-                                <Label>Second Location: </Label>
+                                <Label>Second Location:</Label>
                                 {meta.error && meta.touched && <FieldError>{meta.error}</FieldError>}
                             </LabelContainer>
                             <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
@@ -47,11 +46,12 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
             <LocationTypeContainer>
                 <Field
                     name="locationType"
+                    initialValue={"all"}
                     render={({ input }) => (
                     <SingleInputContainer>
                         <Label>Location Type (optional):</Label>
                         <SelectBox {...input}>
-                            <option value="All">Any</option>
+                            <option value="all">Any</option>
                             <option value="food">Restaurant/Bar</option>
                             <option value="active">Things to Do</option>
                             <option value="shopping">Shopping</option>
