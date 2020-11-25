@@ -36,16 +36,20 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
             </AddressesContainer>
 
             <LocationTypeContainer>
-
-                <SingleInputContainer>
-                    <Label>Location Type (optional):</Label>
-                    <SelectBox>
-                        <option value="All">Any</option>
-                        <option value="food">Restaurant/Bar</option>
-                        <option value="active">Things to Do</option>
-                        <option value="shopping">Shopping</option>
-                    </SelectBox>
-                </SingleInputContainer>
+                <Field
+                name="locationType"
+                    render={({ select }) => (
+                    <SingleInputContainer>
+                        <Label>Location Type (optional):</Label>
+                        <SelectBox {...select}>
+                            <option value="All">Any</option>
+                            <option value="food">Restaurant/Bar</option>
+                            <option value="active">Things to Do</option>
+                            <option value="shopping">Shopping</option>
+                        </SelectBox>
+                    </SingleInputContainer>
+                    )}
+                />
             </LocationTypeContainer>
 
             <SubmitContainer>
