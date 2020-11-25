@@ -18,9 +18,12 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
                     validate={required}
                     render={({ input, meta }) => (
                     <SingleInputContainer>
-                        <Label>First Location:</Label>
+                        <LabelContainer>
+                            <Label>First Location:</Label>
+                            <FieldError>{meta.error && meta.touched && <span>{meta.error}</span>}</FieldError>
+                        </LabelContainer>
+                        
                         <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
-                        {meta.error && meta.touched && <FieldError>{meta.error}</FieldError>}
                     </SingleInputContainer>
                     )}
                 />
@@ -30,9 +33,11 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
                     validate={required}
                     render={({ input, meta }) => (
                         <SingleInputContainer>
-                            <Label>Second Location: </Label>
+                            <LabelContainer>
+                                <Label>Second Location: </Label>
+                                {meta.error && meta.touched && <FieldError>{meta.error}</FieldError>}
+                            </LabelContainer>
                             <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
-                            {meta.error && meta.touched && <FieldError>{meta.error}</FieldError>}
                         </SingleInputContainer>
                     )}
                 />
@@ -83,6 +88,11 @@ margin: 0 auto;
 font-family: Montserrat;
 `
 
+const LabelContainer = styled.div`
+    display: flex;
+    justify-content: space-between
+    `
+
 const Label = styled.label`
 color: ${Colors.lightGrey};
 `
@@ -114,10 +124,12 @@ font-size: .9em;
 `
 
 const FieldError = styled.span`
-color: red;
+color: ${Colors.errorRed};
 font-weight: bold;
-padding-left: 10px;
-margin-top: 10px;
+font-size: .9em;
+padding-right: 15px;
+justify-self: right;
+margin-bottom: 0;
 `
 
 const LocationTypeContainer = styled.div`
