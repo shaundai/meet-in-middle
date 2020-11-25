@@ -6,26 +6,33 @@ import { Colors } from './util/Colors'
 
 
 const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
+
+    const required = value => (value ? undefined : 'Required')
+
         return (
             <FormContainer onSubmit={handleSubmit}>
             <AddressesContainer>
 
                 <Field
                     name="firstLocation"
-                    render={({ input }) => (
+                    validate={required}
+                    render={({ input, meta }) => (
                     <SingleInputContainer>
                         <Label>First Location:</Label>
                         <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
+                        {meta.error && meta.touched && <span>{meta.error}</span>}
                     </SingleInputContainer>
                     )}
                 />
 
                 <Field
                     name="secondLocation"
-                    render={({ input }) => (
+                    validate={required}
+                    render={({ input, meta }) => (
                         <SingleInputContainer>
                             <Label>Second Location: </Label>
                             <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
+                            {meta.error && meta.touched && <span>{meta.error}</span>}
                         </SingleInputContainer>
                     )}
                 />
