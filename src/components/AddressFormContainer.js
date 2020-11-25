@@ -12,7 +12,6 @@ const AddressFormContainer = () => {
         return (
             <Form 
                 onSubmit={onSubmit}
-                validate={null}
                 render={({ handleSubmit, form, values, submitting, pristine }) => (
                     <AddressForm handleSubmit={handleSubmit} />
                 )}
