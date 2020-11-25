@@ -24,7 +24,7 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
                 />
 
                 <Field
-                name="secondLocation"
+                    name="secondLocation"
                     render={({ input }) => (
                         <SingleInputContainer>
                             <Label>Second Location: </Label>
@@ -37,11 +37,11 @@ const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
 
             <LocationTypeContainer>
                 <Field
-                name="locationType"
-                    render={({ select }) => (
+                    name="locationType"
+                    render={({ input }) => (
                     <SingleInputContainer>
                         <Label>Location Type (optional):</Label>
-                        <SelectBox {...select}>
+                        <SelectBox {...input}>
                             <option value="All">Any</option>
                             <option value="food">Restaurant/Bar</option>
                             <option value="active">Things to Do</option>
