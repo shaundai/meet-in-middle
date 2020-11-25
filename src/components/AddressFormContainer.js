@@ -5,20 +5,16 @@ import AddressForm from './AddressForm'
 
 const AddressFormContainer = () => {
 
-    const onSubmit = () => {
-        return
-    }
-
-    const handleSubmit = () => {
-        return
+    const onSubmit = async values => {
+        window.alert(JSON.stringify(values, 0, 2))
     }
 
         return (
             <Form 
                 onSubmit={onSubmit}
                 validate={null}
-                render={({ handleSubmit }) => (
-                    <AddressForm />
+                render={({ handleSubmit, form, values, submitting, pristine }) => (
+                    <AddressForm handleSubmit={handleSubmit} />
                 )}
             />
                 

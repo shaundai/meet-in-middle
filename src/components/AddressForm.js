@@ -5,7 +5,7 @@ import { Field } from 'react-final-form'
 import { Colors } from './util/Colors'
 
 
-const AddressForm = ({handleSubmit}) => {
+const AddressForm = ({handleSubmit, form, values, submitting, pristine}) => {
     const [startAndEnd, setStartAndEnd] = useState({start: '', end: '', locationType: 'All'})
 
         return (
@@ -17,7 +17,8 @@ const AddressForm = ({handleSubmit}) => {
                     render={({ input }) => (
                     <SingleInputContainer>
                         <Label>First Location:</Label>
-                        <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.start} onChange={e => {setStartAndEnd({...startAndEnd, start: e.target.value})}}></InputBox>
+                        <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
+                        <Label>{input.value}</Label>
                     </SingleInputContainer>
                     )}
                 />
@@ -27,7 +28,7 @@ const AddressForm = ({handleSubmit}) => {
                     render={({ input }) => (
                         <SingleInputContainer>
                             <Label>Second Location: </Label>
-                            <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" value={startAndEnd.end} onChange={e => {setStartAndEnd({...startAndEnd, end: e.target.value})}}></InputBox>
+                            <InputBox type="text" {...input} placeholder="ex. 123 Sesame Street or Boston, MA" ></InputBox>
                         </SingleInputContainer>
                     )}
                 />
@@ -38,7 +39,7 @@ const AddressForm = ({handleSubmit}) => {
 
                 <SingleInputContainer>
                     <Label>Location Type (optional):</Label>
-                    <SelectBox value={startAndEnd.locationType} onChange={e => {setStartAndEnd({...startAndEnd, locationType: e.target.value})}}>
+                    <SelectBox>
                         <option value="All">Any</option>
                         <option value="food">Restaurant/Bar</option>
                         <option value="active">Things to Do</option>
@@ -48,7 +49,11 @@ const AddressForm = ({handleSubmit}) => {
             </LocationTypeContainer>
 
             <SubmitContainer>
-                <SubmitButton type="submit" value="Find A Place" />
+                <SubmitButton
+                    type="submit"
+                    value="Find A Place"
+                    disabled={submitting || pristine}
+               />
             </SubmitContainer>
     
     
