@@ -86,6 +86,7 @@ flex-direction: column;
 align-items: center;
 margin: 0 auto;
 font-family: Montserrat;
+border: 1px solid black;
 `
 
 const LabelContainer = styled.div`
@@ -108,7 +109,14 @@ width: 80%;
 justify-content: space-between;
 margin: 0 auto;
 padding: 40px 0;
+border: 1px solid white;
 font-family: Montserrat;
+@media (max-width: 1160px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+  }
 `
 
 const InputBox = styled.input`

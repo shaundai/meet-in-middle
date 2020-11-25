@@ -24,5 +24,6 @@ const AppContainer = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
+min-width: 540px;
 background-color: ${Colors.darkGrey}
 `
