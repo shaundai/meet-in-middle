@@ -126,7 +126,6 @@ font-size: .9em;
 const FieldError = styled.span`
 color: ${Colors.errorRed};
 font-weight: bold;
-font-size: .9em;
 padding-right: 15px;
 justify-self: right;
 margin-bottom: 0;
