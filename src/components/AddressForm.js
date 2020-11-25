@@ -79,14 +79,14 @@ export default AddressForm;
 
 
 const FormContainer = styled.form`
-width: 75%;
+width: 80%;
+max-width: 1060px;
 padding: 15px 0;
 display: flex;
 flex-direction: column;
 align-items: center;
 margin: 0 auto;
 font-family: Montserrat;
-border: 1px solid black;
 `
 
 const LabelContainer = styled.div`
@@ -101,6 +101,9 @@ color: ${Colors.lightGrey};
 const SingleInputContainer = styled.div`
     display: flex;
     flex-direction: column;
+    @media (max-width: 1160px) {
+        margin-top: 20px;
+    }
 `
 
 const AddressesContainer = styled.div`
@@ -108,14 +111,13 @@ display: flex;
 width: 80%;
 justify-content: space-between;
 margin: 0 auto;
-padding: 40px 0;
-border: 1px solid white;
+padding: 40px 0px;
 font-family: Montserrat;
 @media (max-width: 1160px) {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 20px 0;
+    padding: 20px 0 0 0;
   }
 `
 
@@ -144,6 +146,9 @@ display: flex;
 width: 80%;
 justify-content: center;
 margin-top: 5px;
+@media (max-width: 1160px) {
+        margin: 0;
+    }
 `
 
 const SelectBox = styled.select`
