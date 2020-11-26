@@ -7,11 +7,12 @@ import { findDistanceBetweenTwoLocations } from './util/googleApi'
 
 const AddressFormContainer = () => {
 
+    const [distance, setDistance] = useState('')
+
     const onSubmit = async (values) => {
         try {
             const distanceBetween = await findDistanceBetweenTwoLocations(values.firstLocation, values.secondLocation)
-            return distanceBetween
-            console.log(distanceBetween)
+            setDistance(distanceBetween.distance.text)
         }
         catch(err){
           console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
@@ -19,13 +20,15 @@ const AddressFormContainer = () => {
     }
     
         return (
+            <div>
             <Form 
                 onSubmit={onSubmit}
                 render={({ handleSubmit, form, values, submitting, pristine }) => (
                     <AddressForm handleSubmit={handleSubmit} />
                 )}
             />
-                
+            hi {JSON.stringify(distance)}
+                 </div>
         )
 }
 
