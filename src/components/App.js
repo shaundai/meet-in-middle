@@ -5,6 +5,7 @@ import { Colors } from './util/Colors'
 import AddressFormContainer from './AddressFormContainer'
 import LocationList from './LocationList'
 import NavBar from './NavBar'
+import Stats from './Stats'
 
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
     <AppContainer>
       <NavBar />
       <AddressFormContainer />
+      <Stats />
       <LocationList />
     </AppContainer>
   );
