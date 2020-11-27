@@ -1,13 +1,19 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const Stats = ({destinationAddress, distance, duration, originAddress}) => {
         return (
-            <div>
+            <StatsContainer>
                 {originAddress ? `Finding meeting points between ${originAddress} and ${destinationAddress}` : null}
-                The distance between {distance} {duration}
-                Middle points are {} and will take each party {} to get to
-            </div>
+                {originAddress ? `Distance per person ${duration} or ${distance}` : null}
+                {originAddress ? `Here are some meeting places:` : null}
+            </StatsContainer>
         )
 }
 
 export default Stats
+
+const StatsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`
