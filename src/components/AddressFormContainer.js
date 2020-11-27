@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form } from 'react-final-form'
 
 import AddressForm from './AddressForm'
+import Stats from './Stats'
 import Yelp from './util/yelpApi'
 import { findDistanceBetweenTwoLocations } from './util/googleApi'
 
@@ -23,6 +24,7 @@ const AddressFormContainer = () => {
     
         return (
             <div>
+            <Stats />
             <Form 
                 onSubmit={onSubmit}
                 render={({ handleSubmit, form, values, submitting, pristine }) => (
