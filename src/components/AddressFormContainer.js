@@ -8,6 +8,8 @@ import { findDistanceBetweenTwoLocations } from './util/googleApi'
 const AddressFormContainer = () => {
 
     const [distance, setDistance] = useState('')
+    const [originAddress, setOriginAddress] = useState('')
+    const [destinationAddress, setDestinationAddress] = useState('')
 
     const onSubmit = async (values) => {
         try {
@@ -27,7 +29,7 @@ const AddressFormContainer = () => {
                     <AddressForm handleSubmit={handleSubmit} />
                 )}
             />
-            hi {JSON.stringify(distance)}
+            hi {distance}
                  </div>
         )
 }
