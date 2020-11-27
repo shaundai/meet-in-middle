@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Stats = () => {
+const Stats = ({distance, duration}) => {
         return (
             <div>
-                
+                {distance} {duration}
             </div>
         )
 }

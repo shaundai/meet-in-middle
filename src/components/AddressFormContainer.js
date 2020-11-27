@@ -9,6 +9,7 @@ import { findDistanceBetweenTwoLocations } from './util/googleApi'
 const AddressFormContainer = () => {
 
     const [distance, setDistance] = useState('')
+    const [duration, setDuration] = useState('')
     const [originAddress, setOriginAddress] = useState('')
     const [destinationAddress, setDestinationAddress] = useState('')
 
@@ -16,6 +17,7 @@ const AddressFormContainer = () => {
         try {
             const distanceBetween = await findDistanceBetweenTwoLocations(values.firstLocation, values.secondLocation)
             setDistance(distanceBetween.distance.text)
+            setDuration(distanceBetween.duration.text)
         }
         catch(err){
           console.log(`My error code is ${err.status}.  I errored out bc ${err}`)
@@ -24,14 +26,13 @@ const AddressFormContainer = () => {
     
         return (
             <div>
-            <Stats />
+            <Stats distance={distance} duration={duration} />
             <Form 
                 onSubmit={onSubmit}
                 render={({ handleSubmit, form, values, submitting, pristine }) => (
                     <AddressForm handleSubmit={handleSubmit} />
                 )}
             />
-            hi {distance}
                  </div>
         )
 }
