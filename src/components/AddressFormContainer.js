@@ -16,6 +16,8 @@ const AddressFormContainer = () => {
     const onSubmit = async (values) => {
         try {
             const distanceBetween = await findDistanceBetweenTwoLocations(values.firstLocation, values.secondLocation)
+            setOriginAddress(distanceBetween.origin_addresses)
+            setDestinationAddress(distanceBetween.destination_addresses)
             setDistance(distanceBetween.distance.text)
             setDuration(distanceBetween.duration.text)
         }
@@ -26,13 +28,18 @@ const AddressFormContainer = () => {
     
         return (
             <div>
-            <Stats distance={distance} duration={duration} />
-            <Form 
-                onSubmit={onSubmit}
-                render={({ handleSubmit, form, values, submitting, pristine }) => (
-                    <AddressForm handleSubmit={handleSubmit} />
-                )}
-            />
+                <Form 
+                    onSubmit={onSubmit}
+                    render={({ handleSubmit, form, values, submitting, pristine }) => (
+                        <AddressForm handleSubmit={handleSubmit} />
+                    )}
+                />
+                <Stats
+                    originAddress={originAddress}
+                    destinationAddress={destinationAddress}
+                    distance={distance}
+                    duration={duration}
+                />
                  </div>
         )
 }
