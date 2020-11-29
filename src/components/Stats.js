@@ -5,14 +5,13 @@ import { Colors } from './util/Colors'
 
 const Stats = ({destinationAddress, distance, duration, originAddress}) => {
 
-    const meetingPointsLine = <MeetingLineContainer>Finding meeting points between <DistanceAndDuration>{originAddress}tojore</DistanceAndDuration> and <DistanceAndDuration>tojore{destinationAddress}</DistanceAndDuration></MeetingLineContainer>
-    const distanceLine = <DistanceLineContainer>Distance per person is <DistanceAndDuration>{duration}tojore</DistanceAndDuration> or <DistanceAndDuration>tojore{distance}</DistanceAndDuration>.</DistanceLineContainer>
+    const meetingPointsLine = <MeetingLineContainer>Finding meeting points between <DistanceAndDuration>{originAddress}</DistanceAndDuration> and <DistanceAndDuration>{destinationAddress}</DistanceAndDuration></MeetingLineContainer>
+    const distanceLine = <DistanceLineContainer>Distance per person is <DistanceAndDuration>{duration}</DistanceAndDuration> or <DistanceAndDuration>{distance}</DistanceAndDuration>.</DistanceLineContainer>
 
         return (
             <StatsContainer>
-                <div>{!originAddress ? meetingPointsLine : null}</div>
-                <div>{!originAddress ? distanceLine : null}</div>
-                <div>{!originAddress ? `Here are some meeting places:` : null}</div>
+                <div>{originAddress ? meetingPointsLine : null}</div>
+                <div>{originAddress ? distanceLine : null}</div>
             </StatsContainer>
         )
 }
