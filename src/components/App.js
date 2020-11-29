@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { Colors } from './util/Colors'
 import AddressFormContainer from './AddressFormContainer'
-import LocationList from './LocationList'
 import NavBar from './NavBar'
 
 
@@ -13,7 +12,6 @@ const App = () => {
     <AppContainer>
       <NavBar />
       <AddressFormContainer />
-      <LocationList />
     </AppContainer>
   );
 }
