@@ -7,7 +7,7 @@ import { Colors } from './util/Colors'
 const LocationList = () => {
         return (
             <LocationListContainer>
-                Map of list of locations
+                <div>{originAddress ? `Here are some meeting places:` : null}</div>
             </LocationListContainer>
         )
 }
