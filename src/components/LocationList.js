@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { Colors } from './util/Colors'
 
 
-const LocationList = () => {
+const LocationList = (originAddress) => {
         return (
             <LocationListContainer>
-                <div>{originAddress ? `Here are some meeting places:` : null}</div>
+                <div>Check out these meeting places:</div>
             </LocationListContainer>
         )
 }
@@ -20,4 +20,5 @@ const LocationListContainer = styled.div`
     display: flex;
     justify-content: center;
     border: 1px solid black;
+    font-family: Montserrat;
 `

@@ -50,7 +50,9 @@ const AddressFormContainer = () => {
                     distance={distance}
                     duration={duration}
                 />
-                <LocationList />
+                <LocationList
+                    originAddress={originAddress}
+                />
                 {midDuration} hi there {duration}
                  </div>
         )
